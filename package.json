@@ -1,0 +1,16 @@
+{
+  "name": "back-office-protractor",
+  "version": "1.0.0",
+  "description": "Created for manage e2e test in the Kyani back office",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "PSL",
+  "license": "ISC",
+  "devDependencies": {
+    "chance": "^1.0.4",
+    "jasmine-spec-reporter": "^2.7.0",
+    "protractor": "^4.0.10"
+  }
+}
