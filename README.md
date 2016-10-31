@@ -14,4 +14,5 @@ export KYANI_KEY="password"
 ```
 
 ## Run tests:
+* Run `npm test` or
 * `node_modules/.bin/protractor conf.js`
