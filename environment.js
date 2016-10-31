@@ -10,8 +10,8 @@ module.exports = {
 
     // Capabilities to be passed to the webdriver instance.
     capabilities: {
-		browserName: 'chrome'
-	},
+        browserName: 'chrome'
+    },
 
     // Jasmine node options
     // See https://github.com/jasmine/jasmine-npm/blob/master/lib/jasmine.js
