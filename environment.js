@@ -4,7 +4,7 @@ module.exports = {
     // Path of the selenium server
     seleniumServerJar: "node_modules/protractor/node_modules/webdriver-manager/selenium/selenium-server-standalone-2.53.1.jar",
     // Spec patterns
-    specs: ['e2e/**/*spec.js'],
+    specs: ['e2e/**/*test.js'],
     framework: 'jasmine2',
     baseUrl: baseUrl,
 
@@ -30,8 +30,13 @@ module.exports = {
         // set browser size...
         browser.manage().window().setSize(1024, 800);
 
-        // better jasmine 2 reports...
+
+        var Jasmine2HtmlReporter = require('protractor-jasmine2-html-reporter');
         var SpecReporter = require('jasmine-spec-reporter');
+
+        jasmine.getEnv().addReporter(new Jasmine2HtmlReporter({
+            savePath: './reports/'
+        }));
         jasmine.getEnv().addReporter(new SpecReporter({displayStacktrace: 'spec'}));
 
         browser.ignoreSynchronization = true;

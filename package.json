@@ -7,14 +7,15 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
-      "type": "git",
-      "url": "https://github.com/josedeita/bo_protractor"
+    "type": "git",
+    "url": "https://github.com/josedeita/bo_protractor"
   },
   "author": "PSL",
   "license": "ISC",
   "devDependencies": {
     "chance": "^1.0.4",
     "jasmine-spec-reporter": "^2.7.0",
-    "protractor": "^4.0.10"
+    "protractor": "^4.0.10",
+    "protractor-jasmine2-html-reporter": "0.0.6"
   }
 }
