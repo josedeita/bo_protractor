@@ -2,7 +2,7 @@ var env = require('./environment.js');
 
 exports.config = {
     seleniumServerJar: env.seleniumServerJar,
-	specs: env.specs,
+    specs: env.specs,
     baseUrl: env.baseUrl,
     framework: env.framework,
     capabilities: env.capabilities,
