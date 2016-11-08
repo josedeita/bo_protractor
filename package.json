@@ -16,6 +16,7 @@
     "chai": "^3.5.0",
     "chai-as-promised": "^6.0.0",
     "chance": "^1.0.4",
+    "cucumber-html-reporter": "^0.2.16",
     "protractor": "^4.0.10",
     "protractor-cucumber-framework": "^0.6.0"
   }

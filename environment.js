@@ -4,7 +4,7 @@ module.exports = {
     // Path of the selenium server
     seleniumServerJar: "node_modules/protractor/node_modules/webdriver-manager/selenium/selenium-server-standalone-2.53.1.jar",
     // Spec patterns
-    specs: ['features/*.feature'],
+    specs: ['e2e/**/*.feature'],
     framework: 'custom',
     baseUrl: baseUrl,
 
@@ -14,7 +14,7 @@ module.exports = {
     },
 
     cucumberOpts: {
-        require: 'features/step_definitions/*.js',
+        require: 'e2e/**/step_definitions/*.js',
         tags: false,
         format: 'pretty',
         profile: false,
