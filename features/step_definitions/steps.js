@@ -5,14 +5,7 @@ chai.use(chaiAsPromised);
 var expect = chai.expect;
 
 module.exports = function () {
-    this.BeforeFeature(function (event, callback) {
-        browser.ignoreSynchronization = false;
-        callback();
-    });
-
-    this.Given(/^I in the home page$/, {timeout: 15 * 1000}, function (callback) {
-        console.log('----');
-        console.log(browser.getCurrentUrl());
+    this.Given(/^I in the home page$/, function (callback) {
         // Write code here that turns the phrase above into concrete actions
         expect(true).to.be.true;
         callback();
@@ -28,7 +21,7 @@ module.exports = function () {
         // Write code here that turns the phrase above into concrete actions
         var title = element(by.id('title-rank'));
 
-        expect(title.getText()).to.eventually.equal('lol').and.notify(callback);
+        expect(title.getText()).to.eventually.equal(text).and.notify(callback);
     });
 
 };
