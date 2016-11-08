@@ -6,7 +6,6 @@ var expect = chai.expect;
 
 module.exports = function () {
     this.Given(/^I go to "([^"]*)"$/, function(site) {
-        console.log('site:', site);
         browser.get(site);
     });
 
@@ -23,7 +22,7 @@ module.exports = function () {
         var todoList = element.all(by.repeater('todo in todoList.todos'));
         expect(todoList.count()).to.eventually.equal(3);
         expect(todoList.get(2).getText())
-            .to.eventually.equal('Do not Be Awesome')
+            .to.eventually.equal('Be Awesome')
             .and.notify(callback);
     });
 };

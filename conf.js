@@ -2,8 +2,8 @@ var env = require('./environment.js');
 
 exports.config = {
     seleniumServerJar: env.seleniumServerJar,
-    getPageTimeout: 60000,
-    allScriptsTimeout: 500000,
+    getPageTimeout: 300000,
+    allScriptsTimeout: 900000,
     specs: env.specs,
     baseUrl: env.baseUrl,
     framework: env.framework,
