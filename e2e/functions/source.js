@@ -1,9 +1,9 @@
-var HomePage = function () {
-    this.headerInfo = element(by.binding('HeaderCtrl.showInfoHeader'));
-    this.search = $('#searchBox');
+var EC = protractor.ExpectedConditions;
+
+var src = function () {
 
     this.waitElementPresent =  function (element) {
-        return browser.wait(element, 10);
+        return browser.wait(function() { return browser.isElementPresent(element) }, 60000);
     };
 
     this.isElementPresent = function (element) {
@@ -11,7 +11,6 @@ var HomePage = function () {
             element.isPresent();
         });
     };
+}
 
-};
-
-module.exports = new HomePage();
+module.exports = new src();
