@@ -23,7 +23,7 @@ module.exports = {
 
     onPrepare: function () {
         // set implicit wait times in ms...
-        browser.manage().timeouts().implicitlyWait(5000);
+        browser.manage().timeouts().implicitlyWait(9000);
         // set browser size...
         browser.manage().window().setSize(1024, 800);
 
@@ -39,6 +39,6 @@ module.exports = {
             return browser.driver.getCurrentUrl().then(function (url) {
                 return /home/.test(url);
             });
-        }, 15000);
+        }, 30000);
     }
 };
