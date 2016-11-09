@@ -11,13 +11,13 @@ module.exports = function () {
         callback();
     });
 
-    this.When(/^I click in the Reports button$/, {timeout: 14 * 1000}, function () {
+    this.When(/^I click in the Reports button$/, function () {
         // Write code here that turns the phrase above into concrete actions
          var el = element(by.id('insight-header'));
          el.click();
     });
 
-    this.Then(/^I should see "([^"]*)" title$/, {timeout: 16 * 1000}, function (text, callback) {
+    this.Then(/^I should see "([^"]*)" title$/, function (text, callback) {
         // Write code here that turns the phrase above into concrete actions
         var title = element(by.id('title-rank'));
 

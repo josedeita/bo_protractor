@@ -6,6 +6,7 @@ module.exports = {
     // Spec patterns
     specs: ['e2e/**/*.feature'],
     framework: 'custom',
+    frameworkPath: require.resolve('protractor-cucumber-framework'),
     baseUrl: baseUrl,
 
     // Capabilities to be passed to the webdriver instance.
@@ -14,7 +15,10 @@ module.exports = {
     },
 
     cucumberOpts: {
-        require: 'e2e/**/step_definitions/*.js',
+        require: [
+            'e2e/**/step_definitions/*.js',
+            'e2e/support/timeout.js'
+        ],
         tags: false,
         format: 'pretty',
         profile: false,

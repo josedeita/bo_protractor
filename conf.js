@@ -7,7 +7,7 @@ exports.config = {
     specs: env.specs,
     baseUrl: env.baseUrl,
     framework: env.framework,
-    frameworkPath: require.resolve('protractor-cucumber-framework'),
+    frameworkPath: env.frameworkPath,
     capabilities: env.capabilities,
     cucumberOpts: env.cucumberOpts,
     onPrepare: env.onPrepare
