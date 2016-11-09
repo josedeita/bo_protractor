@@ -31,18 +31,5 @@ module.exports = {
         // set browser size...
         browser.manage().window().setSize(1024, 800);
 
-        browser.ignoreSynchronization = true;
-        browser.driver.get(baseUrl + '/en-us/?app=office-dev');
-        $('#username').sendKeys(process.env.KYANI_USER);
-        $('#password').sendKeys(process.env.KYANI_KEY);
-        $('button[type="submit"]').click();
-
-        // Login takes some time, so wait until it's done.
-        // For the test app's login, we know it's done when it redirects to home.html.
-        return browser.driver.wait(function () {
-            return browser.driver.getCurrentUrl().then(function (url) {
-                return /home/.test(url);
-            });
-        }, 30000);
     }
 };
