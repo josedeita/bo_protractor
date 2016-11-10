@@ -16,8 +16,9 @@ module.exports = {
 
     cucumberOpts: {
         require: [
-            'e2e/**/step_definitions/*.js',
-            'e2e/support/timeout.js'
+            'e2e/support/world.js',
+            'e2e/support/timeout.js',
+            'e2e/**/step_definitions/*.js'
         ],
         tags: false,
         format: 'pretty',
