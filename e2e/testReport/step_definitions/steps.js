@@ -1,13 +1,7 @@
-var chai = require('chai');
-var chaiAsPromised = require('chai-as-promised');
-
-chai.use(chaiAsPromised);
-var expect = chai.expect;
-
 module.exports = function () {
     this.Given(/^I in the home page$/, function (callback) {
         // Write code here that turns the phrase above into concrete actions
-        expect(true).to.be.true;
+        this.expect(true).to.be.true;
         callback();
     });
 
@@ -21,7 +15,7 @@ module.exports = function () {
         // Write code here that turns the phrase above into concrete actions
         var title = element(by.id('title-rank'));
 
-        expect(title.getText()).to.eventually.equal(text).and.notify(callback);
+        this.expect(title.getText()).to.eventually.equal(text).and.notify(callback);
     });
 
 };
