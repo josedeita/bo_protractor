@@ -42,21 +42,21 @@ module.exports = function () {
   });
 
   this.Then(/^the user sees the fields: Report Title, Build Date, Company names, Company IDs, Personally Sponsored, Leg one Information, Leg two Information, Leg three Information and Other Legs Information, Leg one Volume, Leg two Volume, Leg three Volume and Other Legs Volume, next option and previous option$/, function (callback) {
-      expect(add.title_adp.isPresent().then((result)=>result)).to.be.true;
-      expect(add.genealogyOption.isPresent()).to.be.true;
-      expect(add.title_adp.isPresent()).to.be.true;
-      expect(add.buildDate_adp.isPresent()).to.be.true;
-      expect(add.companiesName_adp.isPresent()).to.be.true;
-      expect(add.id_adp.isPresent()).to.be.true;
-      expect(add.Sponsored_adp.isPresent()).to.be.true;
-      expect(add.labelLeg1_adp.isPresent()).to.be.true;
-      expect(add.volumeLeg1_adp.isPresent()).to.be.true;
-      expect(add.labelLeg2_adp.isPresent()).to.be.true;
-      expect(add.volumeLeg2_adp.isPresent()).to.be.true;
-      expect(add.labelLeg3_adp.isPresent()).to.be.true;
-      expect(add.volumeLeg3_adp.isPresent()).to.be.true;
-      expect(add.labelOtherLegs_adp.isPresent()).to.be.true;
-      expect(add.volumeOtherLegs_adp.isPresent()).to.be.true;
+      expect(add.title_adp.isPresent()).to.eventually.to.equal(true);
+      expect(add.genealogyOption.isPresent()).to.eventually.to.equal(true);
+      expect(add.title_adp.isPresent()).to.eventually.to.equal(true);
+      expect(add.buildDate_adp.isPresent()).to.eventually.to.equal(true);
+      expect(add.companiesName_adp.isPresent()).to.eventually.to.equal(true);
+      expect(add.id_adp.isPresent()).to.eventually.to.equal(true);
+      expect(add.Sponsored_adp.isPresent()).to.eventually.to.equal(true);
+      expect(add.labelLeg1_adp.isPresent()).to.eventually.to.equal(true);
+      expect(add.volumeLeg1_adp.isPresent()).to.eventually.to.equal(true);
+      expect(add.labelLeg2_adp.isPresent()).to.eventually.to.equal(true);
+      expect(add.volumeLeg2_adp.isPresent()).to.eventually.to.equal(true);
+      expect(add.labelLeg3_adp.isPresent()).to.eventually.to.equal(true);
+      expect(add.volumeLeg3_adp.isPresent()).to.eventually.to.equal(true);
+      expect(add.labelOtherLegs_adp.isPresent()).to.eventually.to.equal(true);
+      expect(add.volumeOtherLegs_adp.isPresent()).to.eventually.to.equal(true);
       callback();
     });
 };

@@ -41,7 +41,7 @@ module.exports = function () {
 
   this.Then(/^he sees the ADP submenu active$/, function (callback) {
       src.waitElementPresent(add.genealogyOption);
-      expect(add.genealogyOption.isPresent()).to.be.true;
+      expect(add.genealogyOption.isPresent()).to.eventually.to.equal(true);
       callback();
   });
 

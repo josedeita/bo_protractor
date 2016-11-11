@@ -34,7 +34,7 @@ module.exports = function () {
   });
 
   this.Then(/^he does not see the ADP submenu active\.$/, function (callback) {
-      expect(add.genealogyListSubmenu.isPresent()).to.be.true;
+      expect(add.genealogyListSubmenu.isPresent()).to.eventually.to.equal(true);
           /*it's the same option menu but with different link, so to validate
             the changes it's neccesary to check if it's a list or not*/
       callback();
