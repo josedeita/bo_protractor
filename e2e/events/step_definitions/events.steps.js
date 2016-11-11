@@ -18,13 +18,14 @@ module.exports = function () {
 
     this.Given(/^the distributor clicks on Events$/, function () {
         eventsPo.openEvents();
-        browser.sleep(10000);
+        browser.sleep(5000);
     });
 
     // Scenario: Show message when there are no events
-    this.Given(/^That there aren't any events$/, function (callback) {
-        // Write code here that turns the phrase above into concrete actions
-        callback(null, 'pending');
+    this.Given(/^That there aren't any events$/, function () {
+        return expect(
+            element.all(by.repeater('ticket in eventListCtrl.eventData.attributes.tickets'))
+        ).to.eventually.to.equal(true);
     });
 
     this.When(/^the distributor see the Events page$/, function (callback) {
