@@ -1,5 +1,3 @@
-var baseUrl = 'http://localhost:9000/login';
-
 module.exports = {
     // Path of the selenium server
     seleniumServerJar: "node_modules/protractor/node_modules/webdriver-manager/selenium/selenium-server-standalone-2.53.1.jar",
@@ -7,7 +5,8 @@ module.exports = {
     specs: ['e2e/events/*.feature'],
     framework: 'custom',
     frameworkPath: require.resolve('protractor-cucumber-framework'),
-    baseUrl: baseUrl,
+    // change for https://login.kyani.net when integrate with bamboo
+    baseUrl: 'http://localhost:9000',
 
     // Capabilities to be passed to the webdriver instance.
     capabilities: {
@@ -28,8 +27,8 @@ module.exports = {
 
     onPrepare: function () {
         // Set up chai and chai-as-promised
-        var helper = require('./e2e/support/provideChai.js');
-        helper.loadChai();
+        var provideChai = require('./e2e/support/provideChai.js');
+        provideChai.loadChai();
 
         // set implicit wait times in ms...
         browser.manage().timeouts().implicitlyWait(9000);
