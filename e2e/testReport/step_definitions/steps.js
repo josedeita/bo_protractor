@@ -1,7 +1,7 @@
 module.exports = function () {
     this.Given(/^I in the home page$/, function (callback) {
         // Write code here that turns the phrase above into concrete actions
-        this.expect(true).to.be.true;
+        expect(true).to.be.true;
         callback();
     });
 
@@ -15,7 +15,7 @@ module.exports = function () {
         // Write code here that turns the phrase above into concrete actions
         var title = element(by.id('title-rank'));
 
-        this.expect(title.getText()).to.eventually.equal(text).and.notify(callback);
+        expect(title.getText()).to.eventually.equal(text).and.notify(callback);
     });
 
 };
