@@ -1,12 +1,4 @@
-'use strict';
 
-function CustomWorld() {
-    var chai = require('chai');
-    var chaiAsPromised = require('chai-as-promised');
-    this.expect = chai.expect;
-    chai.use(chaiAsPromised);
-}
+var World = function World() {};
 
-module.exports = function() {
-    this.World = CustomWorld;
-};
+module.exports.World = World;
