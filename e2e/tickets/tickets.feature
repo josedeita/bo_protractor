@@ -4,9 +4,10 @@ Feature: List of tickets that the distributor bought
     so that I can manage what I want to do with them, who I want to send them to and how many I have available
 
 Background:
-    Given that the distributor is in the BOs
-    And the distributor clicks on Eventss
+    Given that the distributor is in the BO
+    And the distributor clicks on Events
 
+@tickets
 Scenario: Navigate to Manage Tickets from the Events page and see the events information
     Given that the distributor has bought tickets for one specific event
     When he clicks on Manage Tickets for that specific event

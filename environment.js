@@ -3,7 +3,7 @@ module.exports = {
     seleniumServerJar: "node_modules/protractor/node_modules/webdriver-manager/selenium/selenium-server-standalone-2.53.1.jar",
     // Spec patterns
     specs: [
-        // 'e2e/events/*.feature',
+        'e2e/events/*.feature',
         'e2e/tickets/*.feature'
     ],
     framework: 'custom',
@@ -22,7 +22,7 @@ module.exports = {
             'e2e/support/world.js',
             'e2e/**/step_definitions/*.js'
         ],
-        tags: false,
+        tags: ['@tickets'],
         format: 'pretty',
         profile: false,
         'no-source': true
