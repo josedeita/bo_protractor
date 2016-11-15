@@ -2,7 +2,10 @@ module.exports = {
     // Path of the selenium server
     seleniumServerJar: "node_modules/protractor/node_modules/webdriver-manager/selenium/selenium-server-standalone-2.53.1.jar",
     // Spec patterns
-    specs: ['e2e/events/*.feature'],
+    specs: [
+        // 'e2e/events/*.feature',
+        'e2e/tickets/*.feature'
+    ],
     framework: 'custom',
     frameworkPath: require.resolve('protractor-cucumber-framework'),
     // change for https://login.kyani.net when integrate with bamboo
