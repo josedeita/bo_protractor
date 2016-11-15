@@ -1,5 +1,5 @@
 var helper = require('../../support/helper');
-var eventsPo = require('../../events/events.po.js');
+var eventsPo = require('./events.po.js');
 
 module.exports = function () {
     this.Before(function () {

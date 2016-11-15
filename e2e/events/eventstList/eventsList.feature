@@ -7,6 +7,7 @@ Background:
     Given that the distributor is in the BO
     And the distributor clicks on Events
 
+@eventsList
 Scenario: Show message when there are no events
     Given That there aren't any events
     When the distributor see the Events page

@@ -3,8 +3,7 @@ module.exports = {
     seleniumServerJar: "node_modules/protractor/node_modules/webdriver-manager/selenium/selenium-server-standalone-2.53.1.jar",
     // Spec patterns
     specs: [
-        'e2e/events/*.feature',
-        'e2e/tickets/*.feature'
+        'e2e/events/**/*.feature'
     ],
     framework: 'custom',
     frameworkPath: require.resolve('protractor-cucumber-framework'),
@@ -20,9 +19,10 @@ module.exports = {
         require: [
             'e2e/support/timeout.js',
             'e2e/support/world.js',
-            'e2e/**/step_definitions/*.js'
+            'e2e/events/**/commons/*.js',
+            'e2e/events/**/step_definitions/*.js'
         ],
-        tags: ['@tickets'],
+        tags: ['@eventsList'],
         format: 'pretty',
         profile: false,
         'no-source': true

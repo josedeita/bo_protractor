@@ -1,4 +1,3 @@
-var eventsPo = require('../../events/events.po.js');
 var ticketsPo = require('../tickets.po.js');
 
 module.exports = function () {

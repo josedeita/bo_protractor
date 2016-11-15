@@ -1,4 +1,4 @@
-var eventsPo = require('../events.po.js');
+var eventsListPo = require('../eventsList.po.js');
 
 module.exports = function () {
 
