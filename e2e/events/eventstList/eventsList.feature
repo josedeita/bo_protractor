@@ -17,10 +17,15 @@ Scenario: Show only one event
     And he sees the location of that event on the highlighted position
     And he sees the name of the event on the highlighted position
 
-@eventsList
 Scenario: Show more that one event
     Given that the distributor is in the BO
     And that there is MORE THAN ONE event
     When the distributor clicks on Events
     Then he see the highlighted event on the highlighted position
     And he see the secondary events with all their information (Image, date, location, title)
+
+@eventsList
+Scenario: Show secondary events sorted by start date
+    Given that there is MORE THAN ONE event
+    When the distributor clicks on Events
+    Then he see the secondary events sorted by start date
