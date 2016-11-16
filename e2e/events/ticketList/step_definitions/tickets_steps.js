@@ -16,18 +16,19 @@ module.exports = function () {
 
     this.Then(/^he sees the Manage Tickets page$/, function () {
         var currentUrl = browser.getCurrentUrl();
-        var urlTickets = browser.baseUrl + '/events/list/45';
+        var urlTickets = browser.baseUrl + '/events/ticketsList/45';
         return expect(currentUrl).to.eventually.equal(urlTickets);
     });
 
     this.Then(/^he sees the image for that event$/, function () {
-        browser.sleep(5000);
-        var eventListBanner = browser.findElement(by.css('.event-list-banner'));
+        var eventListBanner = browser.findElement(by.css('.events-primary'));
         return expect(eventListBanner).to.eventually.exist;
     });
 
-    this.Then(/^he sees the date of that event$/, function (callback) {
-        callback(null, 'pending');
+    this.Then(/^he sees the date of that event$/, function () {
+        browser.sleep(2000);
+        var eventDate = browser.findElement(by.css('.event-date'));
+        return expect(eventDate.getText()).to.eventually.be.ok;
     });
 
 };

@@ -7,7 +7,7 @@ Background:
     Given that the distributor is in the BO
     And the distributor clicks on Events
 
-@ticketList
+@ticketsList
 Scenario: Navigate to Manage Tickets from the Events page and see the events information
     Given that the distributor has bought tickets for one specific event
     When he clicks on Manage Tickets for that specific event
