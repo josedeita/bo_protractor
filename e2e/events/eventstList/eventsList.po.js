@@ -1,13 +1,10 @@
 var EventsPage = function () {
-    this.eventsIcon = $('.events');
-    this.missingEvents = $('.missing-events');
-
-    /**
-     * Click and open events page.
-     */
-    this.openEvents = function () {
-        this.eventsIcon.click();
-    };
+    this.eventsTitle = $('.title-header');
+    this.eventPrimary = $('.events-primary');
+    this.eventPrimaryDate = $('.event-date');
+    this.eventPrimaryCity = $('.event-city');
+    this.eventPrimaryName = $('.event-title');
+    this.eventsSecondary = element.all(by.css('.event-card'));
 };
 
 module.exports = new EventsPage();
