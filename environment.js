@@ -25,7 +25,9 @@ module.exports = {
         tags: [/*'@eventsList',*/
             /*'@reassignTickets',*/
             /*'@cancelReassignTicket'*/
-            '@cancelThroughXReassignTicket'
+            /*'@cancelThroughXReassignTicket'*/
+            /*'@confirmReassignTicket'*/
+            '@CheckingAssignModal'
             /*'@ticketsList'*/
             /*'@cancelReassignTicket'*/],
         format: 'pretty',

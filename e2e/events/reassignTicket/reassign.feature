@@ -45,7 +45,8 @@ Feature: Reassign Ticket
 
   @confirmReassignTicket
   Scenario: Clicking on Confirm
-    Given the distributor has clicked on Reassign
+    Given the distributor is on the Manage Tickets page
+    And he clicks on reassign button
     And he sees the alert message
     When he clicks on Confirm
     Then he sees the assignation modal
