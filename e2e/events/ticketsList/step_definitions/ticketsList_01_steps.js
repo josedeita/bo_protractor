@@ -1,16 +1,6 @@
 // Scenario: Navigate to Manage Tickets from the Events page and see the events information
 
 module.exports = function () {
-    this.Given(/^that the distributor has bought tickets for one specific event$/, function () {
-        var manageTickets = browser.findElement(by.id('manage-tickets'));
-        return expect(manageTickets.getText()).to.eventually.to.equal('Manage Tickets');
-    });
-
-    this.When(/^he clicks on Manage Tickets for that specific event$/, function (next) {
-        var manageTickets = browser.findElement(by.id('manage-tickets'));
-        manageTickets.click();
-        next();
-    });
 
     this.Then(/^he sees the Manage Tickets page$/, function () {
         var currentUrl = browser.getCurrentUrl();
@@ -33,8 +23,9 @@ module.exports = function () {
     });
 
     this.Then(/^he sees the option to buy more tickets$/, function () {
-        var buyTickets = browser.findElement(by.css('.event-buy'));
+        var buyTickets = browser.findElement(by.id('buy-tickets'));
         return expect(buyTickets.getText()).to.eventually.to.equal('Buy Tickets');
         // browser.sleep(2000);
     });
+    
 };

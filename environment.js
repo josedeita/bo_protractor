@@ -3,8 +3,7 @@ module.exports = {
     seleniumServerJar: "node_modules/protractor/node_modules/webdriver-manager/selenium/selenium-server-standalone-2.53.1.jar",
     // Spec patterns
     specs: [
-        // 'e2e/events/**/*.feature'
-        'e2e/events/ticketsList/*.feature'
+        'e2e/events/**/*.feature'
     ],
     framework: 'custom',
     frameworkPath: require.resolve('protractor-cucumber-framework'),
@@ -24,7 +23,7 @@ module.exports = {
             'e2e/events/**/step_definitions/*.js'
         ],
         tags: [],
-        // tags: ['@ticketsList'],
+        tags: ['@ticketsList'],
         format: 'pretty',
         profile: false,
         'no-source': true
