@@ -7,7 +7,7 @@ Feature: Reassign Ticket
 
   Background:
     Given that the distributor is in the BO
-    And the distributor clicks on Events
+
 
   @reassignTickets
   Scenario: Clicking on Reassign
@@ -24,10 +24,35 @@ Feature: Reassign Ticket
     And he sees the 'Confirm' option
 
 
+
   @cancelReassignTicket
   Scenario: Canceling reassign ticket
-    Given the distributor has clicked on Reassign
+    Given the distributor is on the Manage Tickets page
+    And he clicks on reassign button
     And he sees the alert message
     When he clicks on Cancel
-    Then The the alert message is closed and the distributor is back on the Manage Tickets page
+    Then the alert message is closed and the distributor is back on the Manage Tickets page
     And the ticket is still shown as assigned
+
+  @cancelThroughXReassignTicket
+  Scenario: Clicking on the X
+    Given the distributor is on the Manage Tickets page
+    And he clicks on reassign button
+    And he sees the alert message
+    When he clicks on the X
+    Then the alert message is closed and the distributor is back on the Manage Tickets page
+    And the ticket is still shown as assigned
+
+  @confirmReassignTicket
+  Scenario: Clicking on Confirm
+    Given the distributor has clicked on Reassign
+    And he sees the alert message
+    When he clicks on Confirm
+    Then he sees the assignation modal
+#    And he sees the "Assign Ticket" label
+#    And he sees the ticket number
+#    And he sees the "Distributor ID" label
+#    And he sees the ID field
+#    And he sees the next button with it's icon
+#    And he sees the "My invitee is a guest" option
+#    And he sees the X to close the modal

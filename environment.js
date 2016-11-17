@@ -23,7 +23,10 @@ module.exports = {
             'e2e/events/**/step_definitions/*.js'
         ],
         tags: [/*'@eventsList',*/
-            '@reassignTickets',
+            /*'@reassignTickets',*/
+            /*'@cancelReassignTicket'*/
+            '@cancelThroughXReassignTicket'
+            /*'@ticketsList'*/
             /*'@cancelReassignTicket'*/],
         format: 'pretty',
         profile: false,
