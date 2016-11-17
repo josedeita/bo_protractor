@@ -3,6 +3,7 @@
  */
 var helper = require('../../../support/helper');
 var rankStatusPage = require('../../rankStatus.po.js');
+var legVolumePage = require('../leg-volume-rank.po.js');
 module.exports = function () {
 
     // Scenario: Show message when there are no events
@@ -19,7 +20,9 @@ module.exports = function () {
 
     this.Given(/^he clicks on the Reports Menu$/, function () {
         // Write code here that turns the phrase above into concrete actions
+        browser.waitForAngular();
         rankStatusPage.goToRankStatus();
+
         var currentUrl = browser.getCurrentUrl();
         var url = browser.baseUrl + '/insight/rankComparison/';
 
@@ -30,24 +33,30 @@ module.exports = function () {
 
     this.Given(/^he is on the Rank Status$/, function (callback) {
         // Write code here that turns the phrase above into concrete actions
-
-
-        callback(null, 'pending');
+        expect(rankStatusPage.titleLabel.isPresent())
+            .to.eventually.equal(true)
+            .and.notify(callback);
     });
 
-    this.Given(/^he is on his current rank$/, function (callback) {
+    this.Given(/^he is on his current rank$/, function (next) {
         // Write code here that turns the phrase above into concrete actions
-        callback(null, 'pending');
+        next();
     });
 
     this.When(/^he opens View Leg details option$/, function (callback) {
         // Write code here that turns the phrase above into concrete actions
-        callback(null, 'pending');
+        browser.waitForAngular();
+        rankStatusPage.openLegDetails();
+        expect(legVolumePage.popoverLeg.isPresent())
+            .to.eventually.equal(true)
+            .and.notify(callback);
     });
 
     this.Then(/^he sees the downline's ID and Volume for each leg$/, function (callback) {
         // Write code here that turns the phrase above into concrete actions
-        callback(null, 'pending');
+        expect(legVolumePage.firstIdUser.isPresent())
+            .to.eventually.equal(true)
+            .and.notify(callback);
     });
 
 
