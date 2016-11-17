@@ -17,6 +17,6 @@ module.exports = function () {
 
     this.Given(/^the distributor clicks on Events$/, function () {
         eventsPo.openEvents();
-        browser.sleep(5000);
+        browser.sleep(1000);
     });
 };

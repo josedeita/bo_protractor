@@ -1,8 +1,6 @@
-var ticketsPo = require('../tickets.po.js');
+// Scenario: Navigate to Manage Tickets from the Events page and see the events information
 
 module.exports = function () {
-
-    // Scenario: Navigate to Manage Tickets from the Events page and see the events information
     this.Given(/^that the distributor has bought tickets for one specific event$/, function () {
         var manageTickets = browser.findElement(by.id('manage-tickets'));
         return expect(manageTickets.getText()).to.eventually.to.equal('Manage Tickets');
@@ -16,8 +14,7 @@ module.exports = function () {
 
     this.Then(/^he sees the Manage Tickets page$/, function () {
         var currentUrl = browser.getCurrentUrl();
-        var urlTickets = browser.baseUrl + '/events/ticketsList/45';
-        return expect(currentUrl).to.eventually.equal(urlTickets);
+        return expect(currentUrl).to.eventually.contain('/events/ticketsList/');
     });
 
     this.Then(/^he sees the image for that event$/, function () {
@@ -26,9 +23,18 @@ module.exports = function () {
     });
 
     this.Then(/^he sees the date of that event$/, function () {
-        browser.sleep(2000);
         var eventDate = browser.findElement(by.css('.event-date'));
         return expect(eventDate.getText()).to.eventually.be.ok;
     });
 
+    this.Then(/^he sees the location of that event$/, function () {
+        var eventCity = browser.findElement(by.css('.event-city'));
+        return expect(eventCity.getText()).to.eventually.be.ok;
+    });
+
+    this.Then(/^he sees the option to buy more tickets$/, function () {
+        var buyTickets = browser.findElement(by.css('.event-buy'));
+        return expect(buyTickets.getText()).to.eventually.to.equal('Buy Tickets');
+        // browser.sleep(2000);
+    });
 };
