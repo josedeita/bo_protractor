@@ -3,7 +3,7 @@ module.exports = {
     seleniumServerJar: "node_modules/protractor/node_modules/webdriver-manager/selenium/selenium-server-standalone-2.53.1.jar",
     // Spec patterns
     specs: [
-        'e2e/rank-status/leg-volume/**/*.feature'
+        'e2e/insight/rank-status/leg-volume/**/*.feature'
     ],
     framework: 'custom',
     frameworkPath: require.resolve('protractor-cucumber-framework'),
@@ -19,7 +19,7 @@ module.exports = {
         require: [
             'e2e/support/timeout.js',
             'e2e/support/world.js',
-            'e2e/rank-status/leg-volume/**/step_definitions/*.js'
+            'e2e/insight/rank-status/leg-volume/**/step_definitions/*.js'
         ],
         tags: ['@legVolume'],
         format: 'pretty',
