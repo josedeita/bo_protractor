@@ -22,7 +22,9 @@ module.exports = {
             'e2e/events/**/commons/*.js',
             'e2e/events/**/step_definitions/*.js'
         ],
-        tags: ['@eventsList'],
+        tags: [/*'@eventsList',*/
+            '@reassignTickets',
+            /*'@cancelReassignTicket'*/],
         format: 'pretty',
         profile: false,
         'no-source': true
