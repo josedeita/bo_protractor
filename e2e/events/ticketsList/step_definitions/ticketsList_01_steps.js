@@ -1,4 +1,4 @@
-// Scenario: Navigate to Manage Tickets from the Events page and see the events information
+// Scenario: 01 - Navigate to Manage Tickets from the Events page and see the events information
 
 module.exports = function () {
 
@@ -27,5 +27,5 @@ module.exports = function () {
         return expect(buyTickets.getText()).to.eventually.to.equal('Buy Tickets');
         // browser.sleep(2000);
     });
-    
+
 };

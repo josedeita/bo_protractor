@@ -8,7 +8,7 @@ Background:
     And the distributor clicks on Events
 
 # @ticketsList
-Scenario: Navigate to Manage Tickets from the Events page and see the events information
+Scenario: 01 - Navigate to Manage Tickets from the Events page and see the events information
     Given that the distributor has bought tickets for one specific event
     When he clicks on Manage Tickets for that specific event
     Then he sees the Manage Tickets page
@@ -18,7 +18,7 @@ Scenario: Navigate to Manage Tickets from the Events page and see the events inf
     And he sees the option to buy more tickets
 
 # @ticketsList
-Scenario: Navigate to Kyani Shop from Manage Tickets page
+Scenario: 02 - Navigate to Kyani Shop from Manage Tickets page
     Given that the distributor has bought tickets for one specific event
     And he clicks on Manage Tickets for that specific event
     And he's on the Manage Tickets page for that event
@@ -26,8 +26,8 @@ Scenario: Navigate to Kyani Shop from Manage Tickets page
     Then he's taken to Kyani Shop URL for that product on a new browser tab
 
 @ticketsList
-Scenario: Show only one ticket as My Ticket
-    Given that the distributor has bought ONE ticket for the event
+Scenario: 03 - Show only one ticket as My Ticket
+    Given that the distributor has bought tickets for one specific event
     When he clicks on Manage Tickets for that specific event
     Then he sees one ticket card
     And he sees the "My Ticket" label
