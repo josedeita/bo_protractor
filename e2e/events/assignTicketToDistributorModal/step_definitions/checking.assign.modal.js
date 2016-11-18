@@ -6,18 +6,16 @@ module.exports = function () {
 
     this.Then(/^he sees the 'Assign Ticket' label$/, function (callback) {
         var ticketMessage = browser.findElement(by.id("ticketMessage"));
-        console.log(ticketMessage.textContent);
-        console.log(ticketMessage.innerText);
         return ticketMessage != 'undefined';
     });
 
     this.Then(/^he sees the ticket number$/, function (callback) {
-        // Write code here that turns the phrase above into concrete actions
-        callback(null, 'pending');
+        var ticketMessage = browser.findElement(by.id("ticketNumber"));
+        return ticketMessage != 'undefined';
     });
 
     this.Then(/^he sees the 'Distributor ID' label$/, function (callback) {
-        // Write code here that turns the phrase above into concrete actions
+
         callback(null, 'pending');
     });
 
