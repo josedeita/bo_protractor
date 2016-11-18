@@ -3,12 +3,13 @@ module.exports = {
     seleniumServerJar: "node_modules/protractor/node_modules/webdriver-manager/selenium/selenium-server-standalone-2.53.1.jar",
     // Spec patterns
     specs: [
-        'e2e/insight/rank-status/leg-volume/**/*.feature'
+
+        'e2e/insight/paygatesstatus/leg-volume/**/*.feature'
     ],
     framework: 'custom',
     frameworkPath: require.resolve('protractor-cucumber-framework'),
     // change for https://login.kyani.net when integrate with bamboo
-    baseUrl: 'http://localhost:9000',
+    baseUrl: 'https://login.kyani.net',
 
     // Capabilities to be passed to the webdriver instance.
     capabilities: {
@@ -19,9 +20,13 @@ module.exports = {
         require: [
             'e2e/support/timeout.js',
             'e2e/support/world.js',
-            'e2e/insight/rank-status/leg-volume/**/step_definitions/*.js'
+            'e2e/insight/commons/*.js',
+            'e2e/insight/**/step_definitions/*.js',
+
+            'e2e/insight/rank-status/leg-volume/**/step_definitions/*.js',
+            'e2e/insight/paygatesStatus/leg-volume/**/step_definitions/*.js'
         ],
-        tags: ['@legVolume'],
+        tags: ['@legVolumePay'],
         format: 'pretty',
         profile: false,
         'no-source': true

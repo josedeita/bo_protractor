@@ -1,13 +1,15 @@
-Feature: Limit Leg Volume pop up on Rank Status
+Feature: Limit Leg Volume pop up on Paygate Status
     As a Distributor in China
     I want to see just the ID and the volume for each leg so
     that I have no legal issues with the local government.
 
-@legVolume2
-Scenario: A distributor inside China sees ID and Volume by leg only
+@legVolumePay2
+Scenario: A distributor inside China sees ID and Volume by leg only in Paygates
     Given that a distributor is inside China
     And he clicks on the Reports Menu
-    And he is on the Rank Status
+    And he clicks on the rank menu
+    And he clicks on the paygates submenu
+    And he is on the Paygate Status China
     And he is on his current rank
     When he opens View Leg details option
     Then he sees the downline's ID
@@ -16,11 +18,13 @@ Scenario: A distributor inside China sees ID and Volume by leg only
     And does not see the downline's Name
     And does not see the link to the Downline Tree
 
-@legVolume4
-Scenario: A distributor outside China sees Picture, Name, ID, Volume by leg only and link to the Downline Tree
-    Given that a distributor is outside China
+@legVolumePay
+Scenario: A distributor outside China sees Picture, Name, ID, Volume by leg only and link to the Downline Tree in Paygates
+Given that a distributor is outside China
     And he clicks on the Reports Menu
-    And he is on the Rank Status
+    And he clicks on the rank menu
+    And he clicks on the paygates submenu
+    And he is on the Paygate Status
     And he is on his current rank
     When he opens View Leg details option
     Then he sees the downline's picture
@@ -28,3 +32,4 @@ Scenario: A distributor outside China sees Picture, Name, ID, Volume by leg only
     And the downline's ID
     And the downline's Volume for each leg
     And the link to the Downline Tree
+
