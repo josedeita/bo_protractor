@@ -17,7 +17,7 @@ Scenario: 01 - Navigate to Manage Tickets from the Events page and see the event
     And he sees the location of that event
     And he sees the option to buy more tickets
 
-# @ticketsList
+@ticketsList
 Scenario: 02 - Navigate to Kyani Shop from Manage Tickets page
     Given that the distributor has bought tickets for one specific event
     And he clicks on Manage Tickets for that specific event
@@ -36,11 +36,11 @@ Scenario: 03 - Show first ticket as My Ticket
     And he sees the register icon
     And he sees the register option
 
-@ticketsList
+# @ticketsList
 Scenario: 04 Show more than one ticket
 Given that the distributor has bought tickets for one specific event
 When he clicks on Manage Tickets for that specific event
-    Then he sees one ticket card as My Ticket 
+    Then he sees one ticket card as My Ticket
     And he sees unassigned ticket cards for all the other tickets bought
     And he sees the unassigned icon on each of the unassigned ticket cards
     And he sees the Ticket Number label on each of the unassigned ticket cards

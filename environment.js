@@ -22,7 +22,6 @@ module.exports = {
             'e2e/events/**/commons/*.js',
             'e2e/events/**/step_definitions/*.js'
         ],
-        tags: [],
         tags: ['@ticketsList'],
         format: 'pretty',
         profile: false,
