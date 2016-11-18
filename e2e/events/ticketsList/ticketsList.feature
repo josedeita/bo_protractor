@@ -25,13 +25,25 @@ Scenario: 02 - Navigate to Kyani Shop from Manage Tickets page
     When he clicks on Buy More Tickets
     Then he's taken to Kyani Shop URL for that product on a new browser tab
 
-@ticketsList
-Scenario: 03 - Show only one ticket as My Ticket
+# @ticketsList
+Scenario: 03 - Show first ticket as My Ticket
     Given that the distributor has bought tickets for one specific event
     When he clicks on Manage Tickets for that specific event
-    Then he sees one ticket card
-    And he sees the "My Ticket" label
-    And he sees the "Ticket" label
+    Then he sees first ticket card
+    And he sees the My Ticket label
+    And he sees the Ticket Number label
     And he sees the ticket number
     And he sees the register icon
-    And he sees the "Register" option
+    And he sees the register option
+
+@ticketsList
+Scenario: 04 Show more than one ticket
+Given that the distributor has bought tickets for one specific event
+When he clicks on Manage Tickets for that specific event
+    Then he sees one ticket card as My Ticket 
+    And he sees unassigned ticket cards for all the other tickets bought
+    And he sees the unassigned icon on each of the unassigned ticket cards
+    And he sees the Ticket Number label on each of the unassigned ticket cards
+    And he sees the ticket number on each of the unassigned ticket cards
+    And he sees the assign ticket icon on each of the unassigned ticket cards
+    And he sees the Assign Ticket option on each of the unassigned ticket cards
