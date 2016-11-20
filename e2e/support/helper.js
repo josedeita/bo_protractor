@@ -26,6 +26,11 @@ var Helper = function () {
         }, 30000);
     };
 
+    this.logout = function () {
+        browser.executeScript('window.sessionStorage.clear();');
+        browser.executeScript('window.localStorage.clear();');
+    };
+
 };
 
 module.exports = new Helper();

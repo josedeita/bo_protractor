@@ -1,11 +1,11 @@
 var EventsPage = function () {
     this.eventsIcon = $('.events');
-    this.missingEvents = $('.missing-events');
 
     /**
      * Click and open events page.
      */
     this.openEvents = function () {
+        browser.sleep(100);
         this.eventsIcon.click();
     };
 };
