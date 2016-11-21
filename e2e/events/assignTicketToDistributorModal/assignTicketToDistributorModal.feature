@@ -22,3 +22,27 @@ Feature: Assign Tickets to distributor
     And he sees the next button with it's icon
     And he sees the 'My invitee is a guest' option
     And he sees the X to close the modal
+
+
+  @assignTicketInputValidDistributorIdAndNext
+  Scenario: Input valid distributor ID and next
+    When he inputs a valid <distributor ID>
+    And clicks on next
+    Then he sees the Assign Ticket label
+    And he sees the ticket number
+    And he sees the Distributor ID label
+    And he sees the ID field populated with the provided <distributor ID>
+    And he sees the Name label
+    And he sees the name field populated with the <distributor name> according to the service
+    And he sees the Name field un-editable
+    And he sees the Email label
+    And he sees the email field populated with the <distributor email> according to the service
+    And he sees the email field editable
+    And he sees the Cancel option
+    And he sees the Send option
+
+  @assignTicketInvalidInputDistributorIdAndNext
+  Scenario: Input invalid distributor ID and next
+    When he inputs an invalid <distributor ID>
+    And clicks on next
+    Then he sees an <invalid ID message>

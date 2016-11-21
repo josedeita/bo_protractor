@@ -4,38 +4,38 @@
 
 module.exports = function () {
 
-    this.Then(/^he sees the 'Assign Ticket' label$/, function (callback) {
+    this.Then(/^he sees the 'Assign Ticket' label$/, function () {
         var ticketMessage = browser.findElement(by.id("ticketMessage"));
-        return ticketMessage != 'undefined';
+        return expect(ticketMessage).to.eventually.exist;
     });
 
-    this.Then(/^he sees the ticket number$/, function (callback) {
+    this.Then(/^he sees the ticket number$/, function () {
         var ticketNumber = browser.findElement(by.id("ticketNumber"));
-        return ticketNumber != 'undefined';
+        return expect(ticketNumber).to.eventually.exist;
     });
 
-    this.Then(/^he sees the 'Distributor ID' label$/, function (callback) {
+    this.Then(/^he sees the 'Distributor ID' label$/, function () {
         var distributorId = browser.findElement(by.id("distributorId"));
-        return distributorId != 'undefined';
+        return expect(distributorId).to.eventually.exist;
     });
 
-    this.Then(/^he sees the ID field$/, function (callback) {
+    this.Then(/^he sees the ID field$/, function () {
         var distributorInput = browser.findElement(by.id("distributorInput"));
-        return distributorInput != 'undefined';
+        return expect(distributorInput).to.eventually.exist;
     });
 
-    this.Then(/^he sees the next button with it's icon$/, function (callback) {
+    this.Then(/^he sees the next button with it's icon$/, function () {
         var nextButton = browser.findElement(by.id("nextButton"));
-        return nextButton != 'undefined';
+        return expect(nextButton).to.eventually.exist;
     });
 
-    this.Then(/^he sees the 'My invitee is a guest' option$/, function (callback) {
+    this.Then(/^he sees the 'My invitee is a guest' option$/, function () {
         var myInviteeIsAGuest = browser.findElement(by.id("myInviteeIsAGuest"));
-        return myInviteeIsAGuest != 'undefined';
+        return expect(myInviteeIsAGuest).to.eventually.exist;
     });
 
-    this.Then(/^he sees the X to close the modal$/, function (callback) {
+    this.Then(/^he sees the X to close the modal$/, function () {
         var assignTicketToDistributorCloseButton = browser.findElement(by.id("assignTicketToDistributorCloseButton"));
-        return assignTicketToDistributorCloseButton != 'undefined';
+        return expect(assignTicketToDistributorCloseButton).to.eventually.exist;
     });
 };

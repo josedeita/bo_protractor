@@ -27,7 +27,9 @@ module.exports = {
             /*'@cancelReassignTicket'*/
             /*'@cancelThroughXReassignTicket'*/
             /*'@confirmReassignTicket'*/
-            '@CheckingAssignModal'
+            /*'@CheckingAssignModal'*/
+            /*'@assignTicketInputValidDistributorIdAndNext'*/
+            '@assignTicketInvalidInputDistributorIdAndNext'
             /*'@ticketsList'*/
             /*'@cancelReassignTicket'*/],
         format: 'pretty',
