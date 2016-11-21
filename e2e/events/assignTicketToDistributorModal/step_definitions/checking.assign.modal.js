@@ -10,32 +10,32 @@ module.exports = function () {
     });
 
     this.Then(/^he sees the ticket number$/, function (callback) {
-        var ticketMessage = browser.findElement(by.id("ticketNumber"));
-        return ticketMessage != 'undefined';
+        var ticketNumber = browser.findElement(by.id("ticketNumber"));
+        return ticketNumber != 'undefined';
     });
 
     this.Then(/^he sees the 'Distributor ID' label$/, function (callback) {
-
-        callback(null, 'pending');
+        var distributorId = browser.findElement(by.id("distributorId"));
+        return distributorId != 'undefined';
     });
 
     this.Then(/^he sees the ID field$/, function (callback) {
-        // Write code here that turns the phrase above into concrete actions
-        callback(null, 'pending');
+        var distributorInput = browser.findElement(by.id("distributorInput"));
+        return distributorInput != 'undefined';
     });
 
     this.Then(/^he sees the next button with it's icon$/, function (callback) {
-        // Write code here that turns the phrase above into concrete actions
-        callback(null, 'pending');
+        var nextButton = browser.findElement(by.id("nextButton"));
+        return nextButton != 'undefined';
     });
 
     this.Then(/^he sees the 'My invitee is a guest' option$/, function (callback) {
-        // Write code here that turns the phrase above into concrete actions
-        callback(null, 'pending');
+        var myInviteeIsAGuest = browser.findElement(by.id("myInviteeIsAGuest"));
+        return myInviteeIsAGuest != 'undefined';
     });
 
     this.Then(/^he sees the X to close the modal$/, function (callback) {
-        // Write code here that turns the phrase above into concrete actions
-        callback(null, 'pending');
+        var assignTicketToDistributorCloseButton = browser.findElement(by.id("assignTicketToDistributorCloseButton"));
+        return assignTicketToDistributorCloseButton != 'undefined';
     });
 };
