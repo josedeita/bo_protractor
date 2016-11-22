@@ -46,3 +46,9 @@ Feature: Assign Tickets to distributor
     When he inputs an invalid <distributor ID>
     And clicks on next
     Then he sees an <invalid ID message>
+
+
+  @clickingOutsideAssignTicketToDistributorModal
+  Scenario: Clicking outside the modal Assign Ticket for distributor
+    When he clicks outside the modal
+    Then he sees the assignation modal

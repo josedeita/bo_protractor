@@ -57,3 +57,11 @@ Feature: Reassign Ticket
 #    And he sees the next button with it's icon
 #    And he sees the "My invitee is a guest" option
 #    And he sees the X to close the modal
+
+  @clickingOutsideReassignModal
+  Scenario: Clicking outside the modal
+    Given the distributor is on the Manage Tickets page
+    And he clicks on reassign button
+    And he sees the alert message
+    And he clicks outside the modal
+    And he do not see assignation modal
