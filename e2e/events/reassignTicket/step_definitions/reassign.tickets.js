@@ -26,9 +26,8 @@ module.exports = function () {
     });
 
     this.Given(/^he clicks on reassign button$/, function () {
-        var modalButton = browser.findElement(by.id("testModal"));
+        var modalButton = browser.findElement(by.id("reassignButton"));
         modalButton.click();
-
     });
 
     this.Then(/^he sees the a alert message$/, function () {
