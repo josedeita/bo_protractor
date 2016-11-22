@@ -4,7 +4,7 @@ module.exports = {
     // Path of the selenium server
     seleniumServerJar: "node_modules/protractor/node_modules/webdriver-manager/selenium/selenium-server-standalone-2.53.1.jar",
     // Spec patterns
-    specs: ['e2e/**/*.feature'],
+    specs: ['e2e/backoffice/china_rank_icons/*.feature'],
     framework: 'custom',
     frameworkPath: require.resolve('protractor-cucumber-framework'),
     baseUrl: baseUrl,
@@ -16,8 +16,8 @@ module.exports = {
 
     cucumberOpts: {
         require: [
-            'e2e/**/step_definitions/*.js',
-            'e2e/support/timeout.js'
+           'e2e/support/timeout.js',
+            'e2e/backoffice/china_rank_icons/step_definitions/*.js'
         ],
         tags: false,
         format: 'pretty',

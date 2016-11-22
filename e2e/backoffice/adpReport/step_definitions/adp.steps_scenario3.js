@@ -3,7 +3,7 @@ var chaiAsPromised = require('chai-as-promised');
 var homePage = require('../../home/home.po.js');
 var loginPage = require('../../login/login.po.js');
 var adp = require('../adpReport.po.js');
-var src = require('../../support/source.js');
+var src = require('../../../support/source.js');
 var add = new adp();
 
 chai.use(chaiAsPromised);
