@@ -17,7 +17,7 @@ Scenario: 01 - Navigate to Manage Tickets from the Events page and see the event
     And he sees the location of that event
     And he sees the option to buy more tickets
 
-@ticketsList
+# @ticketsList
 Scenario: 02 - Navigate to Kyani Shop from Manage Tickets page
     Given that the distributor has bought tickets for one specific event
     And he clicks on Manage Tickets for that specific event
