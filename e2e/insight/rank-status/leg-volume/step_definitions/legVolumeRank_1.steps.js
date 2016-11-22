@@ -10,6 +10,10 @@ module.exports = function () {
         browser.baseUrl = 'https://office-dev.kyani.cn';
     });
 
+    this.After(function(){
+        helper.logout();
+    });
+
 
     // Scenario: Show message when there are no events
     this.Given(/^that a distributor is inside China$/, function () {
@@ -20,7 +24,7 @@ module.exports = function () {
 
         return browser.driver.wait(function () {
             return expect(currentUrl).to.eventually.equal(url);
-        }, 5000);
+        }, 1000);
     });
 
     this.When(/^he opens View Leg details option$/, function (callback) {
@@ -31,48 +35,41 @@ module.exports = function () {
             .and.notify(callback);
     });
 
-    this.Then(/^he sees the downline's ID$/, function (callback) {
+    this.Then(/^he sees the downline's ID$/, function (next) {
         // Write code here that turns the phrase above into concrete actions
-        expect(legVolumePage.firstIdUser.isPresent())
-            .to.eventually.equal(true)
-            .and.notify(callback);
+        legVolumePage.allTablePopover.count().then(function(count) {
+            for(var indexes = 0; indexes < count; indexes++){
+                var idUser = legVolumePage.allTablePopover.get(indexes).element(by.id('user-id-'+indexes));
+                    expect(idUser.isPresent())
+                        .to.eventually.equal(true);
+            }
+            next();
+        });
+
     });
 
-    this.Then(/^Volume for each leg$/, function (callback) {
+    this.Then(/^Volume for each leg$/, function (next) {
         // Write code here that turns the phrase above into concrete actions
-        expect(legVolumePage.firstUserVolumeQv.isPresent())
-            .to.eventually.equal(true)
-            .and.notify(callback);
+        var allTablePopover = element.all(by.repeater('leg in volumeByLegCtrl.legs'));
+        allTablePopover.count().then(function(count) {
+            for(var indexes = 0; indexes < count; indexes++) {
+                var volumeUser = allTablePopover.get(indexes).element(by.id('user-volume-qv-'+indexes));
+                expect(volumeUser.isPresent())
+                    .to.eventually.equal(true);
+            }
+            next();
+        });
     });
 
     this.Then(/^he does not see the downline's picture$/, function (callback) {
         // Write code here that turns the phrase above into concrete actions
-
-            /*expect(legVolumePage.firstImageUser.isPresent())
-                .to.equal(false)
-                .and.notify(callback);*/
-
-       /* expect(legVolumePage.firstImageUser.isPresent().then(function(count){
-            return count.length;
-        })).to.eventually.equal(0);*/
-
-        /*legVolumePage.firstImageUser.isPresent().then(function(count){
-            console.log('count ', count);
-                expect(count).to.equal(false);
-                    //callback();
-        }).and.notify(callback);*/
-
-
         expect(legVolumePage.firstImageUser.isPresent())
             .to.eventually.equal(false)
             .and.notify(callback);
-
-        //callback();
     });
 
     this.Then(/^does not see the downline's Name$/, function (callback) {
         // Write code here that turns the phrase above into concrete actions
-
         expect(legVolumePage.firstUserName.isPresent())
             .to.eventually.equal(false)
             .and.notify(callback);

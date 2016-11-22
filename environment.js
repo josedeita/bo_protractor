@@ -4,7 +4,8 @@ module.exports = {
     // Spec patterns
     specs: [
 
-        'e2e/insight/paygatesstatus/leg-volume/**/*.feature'
+        'e2e/insight/rank-status/leg-volume/**/*.feature',
+        'e2e/insight/paygatesStatus/leg-volume/**/*.feature'
     ],
     framework: 'custom',
     frameworkPath: require.resolve('protractor-cucumber-framework'),
@@ -26,7 +27,7 @@ module.exports = {
             'e2e/insight/rank-status/leg-volume/**/step_definitions/*.js',
             'e2e/insight/paygatesStatus/leg-volume/**/step_definitions/*.js'
         ],
-        tags: ['@legVolumePay'],
+        //tags: ['@legVolume'],
         format: 'pretty',
         profile: false,
         'no-source': true

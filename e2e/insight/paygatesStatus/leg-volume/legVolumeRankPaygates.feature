@@ -30,6 +30,6 @@ Given that a distributor is outside China
     Then he sees the downline's picture
     And the downline's Name
     And the downline's ID
-    And the downline's Volume for each leg
+    And Volume for each leg
     And the link to the Downline Tree
 

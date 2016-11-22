@@ -18,6 +18,16 @@ module.exports = function () {
         //}, 1000);
     });
 
+    this.Given(/^he is on the Rank Status China$/, function (callback) {
+        // Write code here that turns the phrase above into concrete actions
+        var currentUrl = browser.getCurrentUrl();
+        var url = 'https://office-dev.kyani.cn' + '/insight/rankComparison/';
+        expect(currentUrl).to.eventually.equal(url);
+        expect(rankStatusPage.titleLabel.isPresent())
+            .to.eventually.equal(true)
+            .and.notify(callback);
+    });
+
     this.Given(/^he clicks on the rank menu$/, function (next) {
         // Write code here that turns the phrase above into concrete actions
         browser.waitForAngular();

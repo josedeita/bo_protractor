@@ -1,6 +1,7 @@
 var LegVolume = function(){
     this.popoverLeg = $('.volume-popover');
     this.tablePopover = element.all(by.css('[ng-repeat="leg in volumeByLegCtrl.legs"]')).get(0);
+    this.allTablePopover = element.all(by.repeater('leg in volumeByLegCtrl.legs'));
     this.firstIdUser = this.tablePopover.element(by.css('.id.ng-binding'));
     this.firstImageUser = this.tablePopover.element(by.id('user-img-0'));
     this.firstUserName = this.tablePopover.element(by.id('user-name-0'));

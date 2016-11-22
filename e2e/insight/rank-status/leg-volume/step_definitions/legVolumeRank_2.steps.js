@@ -26,39 +26,69 @@ module.exports = function () {
 
     });
 
-    this.Then(/^he sees the downline's picture$/, function (callback) {
+    this.Then(/^he sees the downline's picture$/, function (next) {
         // Write code here that turns the phrase above into concrete actions
-        expect(legVolumePage.firstImageUser.isPresent())
+        legVolumePage.allTablePopover.count().then(function(count) {
+            for(var indexes = 0; indexes < count; indexes++) {
+                var imageUser = legVolumePage.allTablePopover.get(indexes).element(by.id('user-img-'+indexes));
+                expect(imageUser.isPresent())
+                    .to.eventually.equal(true);
+            }
+            next();
+        });
+
+        /*expect(legVolumePage.firstImageUser.isPresent())
             .to.eventually.equal(true)
-            .and.notify(callback);
+            .and.notify(callback);*/
     });
 
-    this.Then(/^the downline's Name$/, function (callback) {
+    this.Then(/^the downline's Name$/, function (next) {
         // Write code here that turns the phrase above into concrete actions
-        expect(legVolumePage.firstUserName.isPresent())
+
+        legVolumePage.allTablePopover.count().then(function(count) {
+            for(var indexes = 0; indexes < count; indexes++) {
+                var nameUser = legVolumePage.allTablePopover.get(indexes).element(by.id('user-name-'+indexes));
+                expect(nameUser.isPresent())
+                    .to.eventually.equal(true);
+            }
+            next();
+        });
+
+        /*expect(legVolumePage.firstUserName.isPresent())
             .to.eventually.equal(true)
-            .and.notify(callback);
+            .and.notify(callback);*/
     });
 
-    this.Then(/^the downline's ID$/, function (callback) {
+    this.Then(/^the downline's ID$/, function (next) {
         // Write code here that turns the phrase above into concrete actions
-        expect(legVolumePage.firstUserId.isPresent())
+        legVolumePage.allTablePopover.count().then(function(count) {
+            for(var indexes = 0; indexes < count; indexes++) {
+                var userId = legVolumePage.allTablePopover.get(indexes).element(by.id('user-id-'+indexes));
+                expect(userId.isPresent())
+                    .to.eventually.equal(true);
+            }
+            next();
+        });
+
+        /*expect(legVolumePage.firstUserId.isPresent())
             .to.eventually.equal(true)
-            .and.notify(callback);
+            .and.notify(callback);*/
     });
 
-    this.Then(/^the downline's Volume for each leg$/, function (callback) {
+   /* this.Then(/^the downline's Volume for each leg$/, function (callback) {
         // Write code here that turns the phrase above into concrete actions
+
         expect(legVolumePage.firstUserVolumeQv.isPresent())
             .to.eventually.equal(true)
             .and.notify(callback);
-    });
+    });*/
 
-    this.Then(/^the link to the Downline Tree$/, function (callback) {
+    this.Then(/^the link to the Downline Tree$/, function (next) {
         // Write code here that turns the phrase above into concrete actions
+
         expect(legVolumePage.firstUserLinkDownlineTree.isPresent())
             .to.eventually.equal(true)
-            .and.notify(callback);
+            .and.notify(next);
     });
 };
 

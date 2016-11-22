@@ -3,11 +3,11 @@ Feature: Limit Leg Volume pop up on Rank Status
     I want to see just the ID and the volume for each leg so
     that I have no legal issues with the local government.
 
-@legVolume2
+@legVolume
 Scenario: A distributor inside China sees ID and Volume by leg only
     Given that a distributor is inside China
     And he clicks on the Reports Menu
-    And he is on the Rank Status
+    And he is on the Rank Status China
     And he is on his current rank
     When he opens View Leg details option
     Then he sees the downline's ID
@@ -16,7 +16,7 @@ Scenario: A distributor inside China sees ID and Volume by leg only
     And does not see the downline's Name
     And does not see the link to the Downline Tree
 
-@legVolume4
+@legVolume
 Scenario: A distributor outside China sees Picture, Name, ID, Volume by leg only and link to the Downline Tree
     Given that a distributor is outside China
     And he clicks on the Reports Menu
@@ -26,5 +26,5 @@ Scenario: A distributor outside China sees Picture, Name, ID, Volume by leg only
     Then he sees the downline's picture
     And the downline's Name
     And the downline's ID
-    And the downline's Volume for each leg
+    And Volume for each leg
     And the link to the Downline Tree
