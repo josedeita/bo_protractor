@@ -8,7 +8,7 @@ Background:
     And the distributor clicks on Events
 
 # @ticketsList
-Scenario: Navigate to Manage Tickets from the Events page and see the events information
+Scenario: 01 - Navigate to Manage Tickets from the Events page and see the events information
     Given that the distributor has bought tickets for one specific event
     When he clicks on Manage Tickets for that specific event
     Then he sees the Manage Tickets page
@@ -17,21 +17,33 @@ Scenario: Navigate to Manage Tickets from the Events page and see the events inf
     And he sees the location of that event
     And he sees the option to buy more tickets
 
-# @ticketsList
-Scenario: Navigate to Kyani Shop from Manage Tickets page
+@ticketsList
+Scenario: 02 - Navigate to Kyani Shop from Manage Tickets page
     Given that the distributor has bought tickets for one specific event
     And he clicks on Manage Tickets for that specific event
     And he's on the Manage Tickets page for that event
     When he clicks on Buy More Tickets
     Then he's taken to Kyani Shop URL for that product on a new browser tab
 
-@ticketsList
-Scenario: Show only one ticket as My Ticket
-    Given that the distributor has bought ONE ticket for the event
+# @ticketsList
+Scenario: 03 - Show first ticket as My Ticket
+    Given that the distributor has bought tickets for one specific event
     When he clicks on Manage Tickets for that specific event
-    Then he sees one ticket card
-    And he sees the "My Ticket" label
-    And he sees the "Ticket" label
+    Then he sees first ticket card
+    And he sees the My Ticket label
+    And he sees the Ticket Number label
     And he sees the ticket number
     And he sees the register icon
-    And he sees the "Register" option
+    And he sees the register option
+
+# @ticketsList
+Scenario: 04 Show more than one ticket
+Given that the distributor has bought tickets for one specific event
+When he clicks on Manage Tickets for that specific event
+    Then he sees one ticket card as My Ticket
+    And he sees unassigned ticket cards for all the other tickets bought
+    And he sees the unassigned icon on each of the unassigned ticket cards
+    And he sees the Ticket Number label on each of the unassigned ticket cards
+    And he sees the ticket number on each of the unassigned ticket cards
+    And he sees the assign ticket icon on each of the unassigned ticket cards
+    And he sees the Assign Ticket option on each of the unassigned ticket cards

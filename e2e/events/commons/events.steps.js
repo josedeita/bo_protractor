@@ -6,6 +6,10 @@ module.exports = function () {
         helper.login();
     });
 
+    this.After(function () {
+        helper.logout();
+    });
+
     this.Given(/^that the distributor is in the BO$/, function () {
         var currentUrl = browser.getCurrentUrl();
         var url = browser.baseUrl + '/home';
@@ -17,6 +21,5 @@ module.exports = function () {
 
     this.Given(/^the distributor clicks on Events$/, function () {
         eventsPo.openEvents();
-        browser.sleep(1000);
     });
 };
