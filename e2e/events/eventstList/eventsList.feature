@@ -24,8 +24,16 @@ Scenario: Show more that one event
     Then he see the highlighted event on the highlighted position
     And he see the secondary events with all their information (Image, date, location, title)
 
-@eventsList
 Scenario: Show secondary events sorted by start date
     Given that there is MORE THAN ONE event
     When the distributor clicks on Events
     Then he see the secondary events sorted by start date
+
+@eventsList
+Scenario: Show secondary events grouped
+    Given that there is MORE THAN ONE event
+    When the distributor clicks on Events
+    Then he sees the secondary events grouped by year
+    And he sees the labels for each year group with the number of the year
+    And he sees the secondary events grouped by month
+    And he sees the labels for each month group with the month name

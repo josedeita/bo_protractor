@@ -55,6 +55,29 @@ module.exports = function () {
 
     // Scenario: Show secondary events sorted by start date
     this.Then(/^he see the secondary events sorted by start date$/, function (next) {
+        // this is validated in with TDD in te impemantion
+        next();
+    });
+
+    // Scenario: Show secondary events grouped
+    this.Then(/^he sees the secondary events grouped by year$/, function (next) {
+        // Write code here that turns the phrase above into concrete actions
+        element.all(by.repeater('event in eventsListCtrl.secondaryEvents')).then(function(data) {
+            console.log(data);
+        });
+        next(null, 'pending');
+    });
+
+    this.Then(/^he sees the labels for each year group with the number of the year$/, function (next) {
+        // Write code here that turns the phrase above into concrete actions
+        next(null, 'pending');
+    });
+
+    this.Then(/^he sees the secondary events grouped by month$/, function (next) {
+        // Write code here that turns the phrase above into concrete actions
+        next(null, 'pending');
+    });
+    this.Then(/^he sees the labels for each month group with the month name$/, function (next) {
         // Write code here that turns the phrase above into concrete actions
         next(null, 'pending');
     });
