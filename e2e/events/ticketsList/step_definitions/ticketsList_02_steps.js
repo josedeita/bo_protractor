@@ -8,8 +8,8 @@ module.exports = function () {
     });
 
     this.When(/^he clicks on Buy More Tickets$/, function (next) {
-        if (browser.findElement(by.id('buy-tickets'))) {
-            browser.findElement(by.id('buy-tickets')).click();
+        if (browser.findElement(by.css('.event-buy'))) {
+            browser.findElement(by.css('.event-buy')).click();
         }
         next();
     });
