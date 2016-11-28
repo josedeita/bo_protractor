@@ -10,12 +10,10 @@ module.exports = function () {
         // Write code here that turns the phrase above into concrete actions
         var currentUrl = browser.getCurrentUrl();
         var url = browser.baseUrl + '/insight/rankComparison/';
-        // browser.driver.wait(function () {
             expect(currentUrl).to.eventually.equal(url);
              expect(rankStatusPage.titleLabel.isPresent())
                  .to.eventually.equal(true)
                  .and.notify(callback);
-        //}, 1000);
     });
 
     this.Given(/^he is on the Rank Status China$/, function (callback) {

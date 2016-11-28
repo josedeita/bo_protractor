@@ -3,7 +3,7 @@
  */
 var helper = require('../../../../support/helper');
 var rankStatusPage = require('../../rankStatus.po.js');
-var legVolumePage = require('../leg-volume-rank.po.js');
+var legVolumePage = require('../legVolumeRank.po.js');
 module.exports = function () {
 
     this.Before(function () {
@@ -50,15 +50,9 @@ module.exports = function () {
 
     this.Then(/^Volume for each leg$/, function (next) {
         // Write code here that turns the phrase above into concrete actions
-        var allTablePopover = element.all(by.repeater('leg in volumeByLegCtrl.legs'));
-        allTablePopover.count().then(function(count) {
-            for(var indexes = 0; indexes < count; indexes++) {
-                var volumeUser = allTablePopover.get(indexes).element(by.id('user-volume-qv-'+indexes));
-                expect(volumeUser.isPresent())
-                    .to.eventually.equal(true);
-            }
-            next();
-        });
+        expect(legVolumePage.firstUserVolumeQv.isPresent())
+            .to.eventually.equal(true)
+            .and.notify(next);
     });
 
     this.Then(/^he does not see the downline's picture$/, function (callback) {

@@ -3,7 +3,7 @@ Feature: Limit Leg Volume pop up on Rank Status
     I want to see just the ID and the volume for each leg so
     that I have no legal issues with the local government.
 
-@legVolume
+@legVolume1
 Scenario: A distributor inside China sees ID and Volume by leg only
     Given that a distributor is inside China
     And he clicks on the Reports Menu

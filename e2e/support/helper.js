@@ -53,8 +53,6 @@ var Helper = function () {
         browser.executeScript('window.sessionStorage.clear();');
         browser.executeScript('window.localStorage.clear();');
         browser.driver.manage().deleteAllCookies();
-        //browser.driver.get('https://login.kyani.net/en-us/?app=testdrive');
-         //browser.restart();
 
     };
 
