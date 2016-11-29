@@ -22,7 +22,7 @@ module.exports = {
             'e2e/events/**/commons/*.js',
             'e2e/events/**/step_definitions/*.js'
         ],
-        tags: ['@ticketsList'],
+        tags: ['@fillGuestForm'],
         format: 'pretty',
         profile: false,
         'no-source': true

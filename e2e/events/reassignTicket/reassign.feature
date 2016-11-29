@@ -7,15 +7,14 @@ Feature: Reassign Ticket
 
   Background:
     Given that the distributor is in the BO
-
+    Given the distributor is on the Manage Tickets page
+    And he clicks on reassign button
 
   @reassignTickets
   Scenario: Clicking on Reassign
 #    Given the distributor is on the Manage Tickets page
 #    And he has at least one assigned ticket
 #    When he clicks on Reassign
-    Given the distributor is on the Manage Tickets page
-    And he clicks on reassign button
     Then he sees the a alert message
     And he sees the alert icon
     And he sees the alert text 'Are you sure you want to reassign this ticket to someone else?'
@@ -27,8 +26,6 @@ Feature: Reassign Ticket
 
   @cancelReassignTicket
   Scenario: Canceling reassign ticket
-    Given the distributor is on the Manage Tickets page
-    And he clicks on reassign button
     And he sees the alert message
     When he clicks on Cancel
     Then the alert message is closed and the distributor is back on the Manage Tickets page
@@ -36,8 +33,6 @@ Feature: Reassign Ticket
 
   @cancelThroughXReassignTicket
   Scenario: Clicking on the X
-    Given the distributor is on the Manage Tickets page
-    And he clicks on reassign button
     And he sees the alert message
     When he clicks on the X
     Then the alert message is closed and the distributor is back on the Manage Tickets page
@@ -45,8 +40,6 @@ Feature: Reassign Ticket
 
   @confirmReassignTicket
   Scenario: Clicking on Confirm
-    Given the distributor is on the Manage Tickets page
-    And he clicks on reassign button
     And he sees the alert message
     When he clicks on Confirm
     Then he sees the assignation modal
@@ -60,8 +53,6 @@ Feature: Reassign Ticket
 
   @clickingOutsideReassignModal
   Scenario: Clicking outside the modal
-    Given the distributor is on the Manage Tickets page
-    And he clicks on reassign button
     And he sees the alert message
     And he clicks outside the modal
     And he do not see assignation modal

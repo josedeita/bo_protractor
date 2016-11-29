@@ -52,3 +52,17 @@ Feature: Assign Tickets to distributor
   Scenario: Clicking outside the modal Assign Ticket for distributor
     When he clicks outside the modal
     Then he sees the assignation modal
+
+  @fillGuestForm
+  Scenario Outline: Sent successfully
+    When he clicks on invite a guest option
+    And he sees the Name label field editable
+    And he sees the Email label
+    And he inputs a name "<name>"
+    And he inputs a valid email <email>
+    When he clicks send button
+    Then he sees my confirmation modal
+    Examples:
+      | name      | email     |
+      | Sebastian | s@s.com   |
+      |           | s@psl.com |

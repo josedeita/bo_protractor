@@ -1,9 +1,6 @@
 /**
  * Created by ssierrao on 17/11/2016.
  */
-
-var reassignStepsPo = require('../reassignSteps.po.js');
-
 var checkUrl = function (url) {
     return function () {
         return browser.getCurrentUrl().then(function (actualUrl) {
@@ -26,8 +23,9 @@ module.exports = function () {
     });
 
     this.Given(/^he clicks on reassign button$/, function () {
-        var modalButton = browser.findElement(by.id("reassignButton"));
-        modalButton.click();
+        var modalButton = $("#reassignButton");
+        //var i = modalButton.element(by.tagName('icon-reassign-ticket'));
+        return modalButton.click();
     });
 
     this.Then(/^he sees the a alert message$/, function () {
