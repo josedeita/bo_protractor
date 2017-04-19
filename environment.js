@@ -1,6 +1,7 @@
 module.exports = {
     // Path of the selenium server
-    seleniumServerJar: "node_modules/protractor/node_modules/webdriver-manager/selenium/selenium-server-standalone-2.53.1.jar",
+    //seleniumServerJar: "node_modules/protractor/node_modules/webdriver-manager/selenium/selenium-server-standalone-2.53.1.jar",
+    seleniumAddress: 'http://localhost:4444/wd/hub',
     // Spec patterns
     specs: [
         'e2e/events/**/*.feature'
@@ -17,13 +18,16 @@ module.exports = {
 
     cucumberOpts: {
         require: [
+            'e2e/events/**/*.js',
             'e2e/support/timeout.js',
             'e2e/support/world.js',
             'e2e/events/**/commons/*.js',
-            'e2e/events/**/step_definitions/*.js'
+            /*'e2e/events/!**!/step_definitions/!*.js',*/
+            'e2e/events/eventsList/step_definitions/*.js',
+            'e2e/events/commons/*.js'
         ],
-        tags: [/*'@eventsList',*/
-            '@reassignTickets',
+        tags: ['@eventsList'
+            /*'@reassignTickets',*/
             /*'@cancelReassignTicket'*/],
         format: 'pretty',
         profile: false,
